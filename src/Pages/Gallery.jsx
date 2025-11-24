@@ -71,16 +71,16 @@ const GallerySection = () => {
 
             <div
               className="absolute inset-0 rounded-full bg-black/30 
-              w-[600px] h-[600px] left-40 top-40 -translate-x-[130%] -translate-y-1/2 
+              w-[600px] h-[600px] top-40 left-40 -translate-x-[1000px] -translate-y-1/2
               group-hover:-translate-x-1/2 group-hover:-translate-y-1/2 
               transition-all duration-700 ease-out"
             ></div>
 
             <h4
               className="absolute text-white text-4xl font-bold 
-              left-1/2 top-1/2 transform translate-x-[1000px]
+              left-1/2 top-1/2 transform translate-x-[800px]
               group-hover:-translate-x-10 group-hover:-translate-y-5 
-              transition-all duration-700 ease-linear"
+              transition-all duration-700 ease-in-out"
             >
               Visit
             </h4>

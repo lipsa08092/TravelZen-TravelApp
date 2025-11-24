@@ -1,6 +1,6 @@
 import React from "react";
 
-const Contact = () => {
+const Contact= () => {
   return (
     <section
       className="py-20 bg-gradient-to-br from-pink-200  to-indigo-100"

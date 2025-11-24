@@ -50,7 +50,7 @@ const places = [
 
 const GallerySection = () => {
   return (
-    <section className="py-10 bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300">
+    <section className="py-10 bg-gradient-to-b from-blue-100 via-blue-200 to-blue-200">
       <h2 className="text-center text-5xl font-bold text-gray-800 mb-12 mx-auto">
         Most Visited Places
         <span className="block h-1 w-24 bg-orange-500 mx-auto mt-2 rounded"></span>

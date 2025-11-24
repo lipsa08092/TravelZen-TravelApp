@@ -1,15 +1,13 @@
 import React from "react";
 import {
-  FaGlobeAsia,
   FaPlane,
-  FaMapMarkedAlt,
   FaMobileAlt,
   FaRegSmile,
 } from "react-icons/fa";
 
 const About = () => {
   return (
-    <section className=" bg-gradient-to-b from-blue-200  via-blue-100 to-blue-50 pb-20 pt-20 px-4">
+    <section className=" bg-gradient-to-b from-blue-200  via-blue-100 to-blue-50 pb-20 pt-12 px-4">
       <div className="max-w-6xl mx-auto text-center mb-14">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mt-10">
           About <span className="text-green-600">Travel</span>
@@ -24,33 +22,41 @@ const About = () => {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-4 mb-20">
+    <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-4 mb-20">
         {[
-          {
-            icon: <FaGlobeAsia size={40} className="text-green-600" />,
+          { id: 1,
+            img: "https://plus.unsplash.com/premium_photo-1737392496459-f89329c1675c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             title: "Explore Worldwide",
-            desc: "Find amazing destinations across the globe with curated guides and expert insights.",
+            desc: "Discover breathtaking destinations with handpicked guides crafted for every kind of traveler.",
           },
-          {
-            icon: <FaPlane size={40} className="text-orange-600" />,
+          { id: 2,
+            img: "https://images.unsplash.com/photo-1502920514313-52581002a659",
             title: "Smart Travel Planning",
-            desc: "Plan perfect trips with optimized routes, must-see places, and smart suggestions.",
+            desc: "Plan your perfect journey with optimized routes, top attractions, and smart suggestions tailored for you.",
           },
-          {
-            icon: <FaMapMarkedAlt size={40} className="text-blue-600" />,
-            title: "Easy Navigation",
-            desc: "Access accurate maps, travel routes, and important travel details anytime, anywhere.",
+          { id:3,
+            img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+            title: "Easy Travel Experience",
+            desc: "Enjoy seamless travel with essential information, cultural tips, and beautiful routes at your fingertips.",
           },
-        ].map((item, i) => (
+        ].map((item) => (
           <div
-            key={i}
-            className="bg-white p-8 shadow-lg rounded-2xl text-center hover:shadow-2xl transition"
+            key={item.id}
+            className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 hover:shadow-2xl"
           >
-            <div className="flex justify-center mb-4">{item.icon}</div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">
-              {item.title}
-            </h3>
-            <p className="text-gray-600">{item.desc}</p>
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-full h-80 object-cover group-hover:scale-110 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-500"></div>
+
+            <div className="absolute top-28 w-full p-6 bg-white/20 backdrop-blur-sm text-center rounded-t-2xl">
+              <h3 className="text-xl font-semibold text-white drop-shadow-md">
+                {item.title}
+              </h3>
+              <p className="text-gray-200 text-sm mt-2">{item.desc}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -61,7 +67,7 @@ const About = () => {
           OUR <span className="text-green-600">JOURNEY</span>
         </h2>
 
-        <div className="bg-white shadow-xl rounded-2xl p-10 leading-relaxed text-gray-700">
+        <div className="bg-gradient-to-b from-gray-300  via-blue-200 to-blue-100 shadow-xl rounded-2xl p-10 leading-relaxed text-gray-700 hover:scale-105 transition-all duration-200">
           <p className="mb-5">
             TravelZen began with a simple idea — traveling should be effortless
             and enjoyable. Whether you're a seasoned globetrotter or someone

@@ -7,16 +7,25 @@
   overflow: hidden;
 }
 
-.track {
-  width: max-content;
-  animation: scroll 15s linear infinite;
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-70%);
-  }
+.track {
+  display: flex;
+  width: 200%;
+  animation: marquee 12s linear infinite;
 }
+
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-slide {
+  animation: slide 12s linear infinite;
+}
+
+
+
