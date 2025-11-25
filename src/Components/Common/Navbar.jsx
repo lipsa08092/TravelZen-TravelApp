@@ -2,163 +2,195 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdOutlineTravelExplore } from "react-icons/md";
-import LoginModal from "../LoginModal";
+import Login from "../../Pages/LogIn";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("Home");
-  const [loginModal, setLoginModal] = useState(false);
+
+  const [showLogin, setShowLogin] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
 
   const handleClick = (item) => {
     setActive(item);
     setIsOpen(false);
   };
 
+  const openLogin = () => {
+    setShowLogin(true);
+    setShowNavbar(false);
+    setIsOpen(false);
+  };
+
+  const closeLogin = () => {
+    setShowLogin(false);
+    setShowNavbar(true);
+  };
+
   return (
-    <header className="w-full fixed top-0 left-0 z-30 bg-black/30 backdrop-blur-sm shadow-md">
-      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4 text-white">
-        <div className="flex">
-          <MdOutlineTravelExplore className="text-4xl text-white" />
-          <h1 className="text-2xl font-bold cursor-pointer tracking-wide drop-shadow-sm hover:scale-105 transition">
-            <span className="text-orange-600">Tra</span>vel
-            <span className="text-green-600">Zen</span>
-          </h1>
-        </div>
+    <div>
+      {showNavbar && (
+        <header className="w-full fixed top-0 left-0 z-30 bg-black/30 backdrop-blur-sm shadow-md">
+          <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4 text-white">
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <MdOutlineTravelExplore className="text-4xl" />
+              <h1 className="text-2xl font-bold">
+                <span className="text-orange-600">Tra</span>vel
+                <span className="text-green-600">Zen</span>
+              </h1>
+            </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 text-lg font-semibold items-center">
-          <Link
-            to="/"
-            onClick={() => handleClick("Home")}
-            className={`relative pb-1 transition ${
-              active === "Home" ? "text-orange-400" : "hover:text-orange-400"
-            }`}
-          >
-            Home
-            <span
-              className={`absolute left-0 top-6 h-[2px] bg-orange-400 transition-all duration-300 ${
-                active === "Home" ? "w-full" : "w-0"
-              }`}
-            ></span>
-          </Link>
+            {/* Desktop Menu */}
 
-          <Link
-            to="/gallery"
-            onClick={() => handleClick("Gallery")}
-            className={`relative pb-1 transition ${
-              active === "Gallery" ? "text-orange-400" : "hover:text-orange-400"
-            }`}
-          >
-            Gallery
-            <span
-              className={`absolute left-0 top-6 h-[2px] bg-orange-400 transition-all duration-300 ${
-                active === "Gallery" ? "w-full" : "w-0"
-              }`}
-            ></span>
-          </Link>
+            <div className="hidden md:flex gap-8 text-lg font-semibold items-center">
+              <Link
+                to="/"
+                onClick={() => handleClick("Home")}
+                className={`relative hover:text-orange-500 pb-1 transition-all ${
+                  active === "Home" ? "text-orange-600 font-bold" : ""
+                }`}
+              >
+                Home
+                {active === "Home" && (
+                  <span className="absolute left-0 bottom-0 w-full h-[2px] bg-orange-500 rounded-full"></span>
+                )}
+              </Link>
 
-          <Link
-            to="/about"
-            onClick={() => handleClick("About")}
-            className={`relative pb-1 transition ${
-              active === "About" ? "text-orange-400" : "hover:text-orange-400"
-            }`}
-          >
-            About
-            <span
-              className={`absolute left-0 top-6 h-[2px] bg-orange-400 transition-all duration-300 ${
-                active === "About" ? "w-full" : "w-0"
-              }`}
-            ></span>
-          </Link>
+              <Link
+                to="/gallery"
+                onClick={() => handleClick("Gallery")}
+                className={`relative hover:text-orange-500 pb-1 transition-all ${
+                  active === "Gallery" ? "text-orange-600 font-bold" : ""
+                }`}
+              >
+                Gallery
+                {active === "Gallery" && (
+                  <span className="absolute left-0 bottom-0 w-full h-[2px] bg-orange-500 rounded-full"></span>
+                )}
+              </Link>
 
-          <Link
-            to="/contact"
-            onClick={() => handleClick("Contact")}
-            className={`relative pb-1 transition ${
-              active === "Contact" ? "text-orange-400" : "hover:text-orange-400"
-            }`}
-          >
-            Contact
-            <span
-              className={`absolute left-0 top-6 h-[2px] bg-orange-400 transition-all duration-300 ${
-                active === "Contact" ? "w-full" : "w-0"
-              }`}
-            ></span>
-          </Link>
+              <Link
+                to="/about"
+                onClick={() => handleClick("About")}
+                className={`relative hover:text-orange-500 pb-1 transition-all ${
+                  active === "About" ? "text-orange-600 font-bold" : ""
+                }`}
+              >
+                About
+                {active === "About" && (
+                  <span className="absolute left-0 bottom-0 w-full h-[2px] bg-orange-500 rounded-full"></span>
+                )}
+              </Link>
 
-          <button
-            onClick={() => setLoginModal(true)}
-            className="px-5 py-2 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-95 transition-all"
-          >
-            Login
-          </button>
-        </div>
+              <Link
+                to="/destination"
+                onClick={() => handleClick("Destination")}
+                className={`relative hover:text-orange-500 pb-1 transition-all ${
+                  active === "Destination" ? "text-orange-600 font-bold" : ""
+                }`}
+              >
+                Destination
+                {active === "Destination" && (
+                  <span className="absolute left-0 bottom-0 w-full h-[2px] bg-orange-500 rounded-full"></span>
+                )}
+              </Link>
 
-        <button
-          className="md:hidden text-white text-2xl"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </button>
-      </nav>
-      {loginModal && <LoginModal close={() => setLoginModal(false)} />}
+              <Link
+                to="/contact"
+                onClick={() => handleClick("Contact")}
+                className={`relative hover:text-orange-500 pb-1 transition-all ${
+                  active === "Contact" ? "text-orange-600 font-bold" : ""
+                }`}
+              >
+                Contact
+                {active === "Contact" && (
+                  <span className="absolute left-0 bottom-0 w-full h-[2px] bg-orange-500 rounded-full"></span>
+                )}
+              </Link>
 
-      <div
-        className={`md:hidden bg-black/70 backdrop-blur-xl text-white text-center absolute w-full transition-all duration-400 overflow-hidden ${
-          isOpen ? "max-h-80 p-6" : "max-h-0 py-0"
-        }`}
-      >
-        <ul className="space-y-4 text-lg font-medium">
-          <Link
-            to="/"
-            onClick={() => handleClick("Home")}
-            className={`block ${
-              active === "Home" ? "text-orange-400" : "hover:text-orange-400"
-            }`}
-          >
-            Home
-          </Link>
+              <button
+                onClick={openLogin}
+                className="px-5 py-2  rounded-full bg-orange-500 shadow-lg hover:bg-orange-600 transition-all"
+              >
+                Login
+              </button>
+            </div>
 
-          <Link
-            to="/gallery"
-            onClick={() => handleClick("Gallery")}
-            className={`block ${
-              active === "Gallery" ? "text-orange-400" : "hover:text-orange-400"
-            }`}
-          >
-            Gallery
-          </Link>
+            {/* Mobile Menu  */}
+            <button
+              className="md:hidden text-white text-2xl"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <FaTimes /> : <FaBars />}
+            </button>
+          </nav>
 
-          <Link
-            to="/about"
-            onClick={() => handleClick("About")}
-            className={`block ${
-              active === "About" ? "text-orange-400" : "hover:text-orange-400"
-            }`}
-          >
-            About
-          </Link>
+          {isOpen && (
+            <div className="md:hidden flex flex-col bg-black/30 backdrop-blur-sm text-white px-6 py-4 space-y-4 items-center text-center ">
+              <Link
+                to="/about"
+                onClick={() => handleClick("About")}
+                className={`relative hover:text-orange-500 pb-1 transition-all ${
+                  active === "About" ? "text-orange-600 font-bold" : ""
+                }`}
+              >
+                Home
+              </Link>
 
-          <Link
-            to="/contact"
-            onClick={() => handleClick("Contact")}
-            className={`block ${
-              active === "Contact" ? "text-orange-400" : "hover:text-orange-400"
-            }`}
-          >
-            Contact
-          </Link>
+              <Link
+                to="/gallery"
+                onClick={() => handleClick("Gallery")}
+                className={`relative hover:text-orange-500 pb-1 transition-all ${
+                  active === "Gallery" ? "text-orange-600 font-bold" : ""
+                }`}
+              >
+                Gallery
+              </Link>
 
-          <button
-            onClick={() => setLoginModal(true)}
-            className="px-5 py-2 rounded-xl bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold shadow-lg shadow-orange-500/30 hover:scale-95 transition"
-          >
-            Login
-          </button>
-        </ul>
-      </div>
-    </header>
+              <Link
+                to="/about"
+                onClick={() => handleClick("About")}
+                className={`relative hover:text-orange-500 pb-1 transition-all ${
+                  active === "About" ? "text-orange-600 font-bold" : ""
+                }`}
+              >
+                About
+              </Link>
+
+              <Link
+                to="/destination"
+                onClick={() => handleClick("Destination")}
+                className={`relative hover:text-orange-500 pb-1 transition-all ${
+                  active === "Destination" ? "text-orange-600 font-bold" : ""
+                }`}
+              >
+                Destination
+              </Link>
+
+              <Link
+                to="/contact"
+                onClick={() => handleClick("Contact")}
+                className={`relative hover:text-orange-500 pb-1 transition-all ${
+                  active === "Contact" ? "text-orange-600 font-bold" : ""
+                }`}
+              >
+                Contact
+              </Link>
+
+              <button
+                onClick={openLogin}
+                className="text-center py-2 px-8 bg-gradient-to-r from-orange-600 to-green-800 rounded-lg font-semibold hover:bg-orange-600"
+              >
+                Login
+              </button>
+            </div>
+          )}
+        </header>
+      )}
+
+      {showLogin && <Login onClose={closeLogin} />}
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import { FaPlane, FaMobileAlt, FaRegSmile } from "react-icons/fa";
 
 const About = () => {
   return (
-    <section className="py-2 bg-gradient-to-b from-blue-200  via-blue-200 to-blue-100 pb-20 px-4">
+    <section className="py-2 bg-gradient-to-b from-blue-200  via-blue-200 to-gray-300 pb-20 px-4">
       <div className="max-w-6xl mx-auto text-center mb-14">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-700 mt-10">
           About <span className="text-green-600">Travel</span>

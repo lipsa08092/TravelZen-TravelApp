@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const places = [
   { id: 1,
     name: "Waterfalls",
@@ -50,7 +51,8 @@ const places = [
 
 const GallerySection = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300">
+  <div>
+    <section className="py-20 bg-gradient-to-b from-blue-200 via-blue-300 to-blue-100">
       <h2 className="text-center text-5xl font-bold text-gray-800 mb-12 mx-auto">
         Most Visited Places
         <span className="block h-1 w-24 bg-orange-500 mx-auto mt-2 rounded"></span>
@@ -92,6 +94,29 @@ const GallerySection = () => {
         ))}
       </div>
     </section>
+    <section
+      className="w-full h-96 bg-cover bg-center bg-no-repeat flex items-center justify-center text-center px-4 relative "
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(0,0,0,0.24), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=926&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+      }}
+    >
+      
+        <div className="max-w-6xl mx-auto text-center px-4 space-y-10">
+          <h3 className="text-4xl font-bold text-white">
+            Explore The World With <span className="text-orange-500">Tra</span>vel<span className="text-green-600">Zen</span>
+          </h3>
+          <p className="text-gray-200 mt-4 text-lg max-w-2xl mx-auto">
+            Discover new places, experience different cultures, and create 
+            unforgettable memories. Your next adventure is just one click away.
+          </p>
+
+          <button className="mt-8 bg-orange-500 hover:bg-orange-600 text-white px-10 py-3 rounded-full text-lg font-semibold shadow-lg transition">
+            Start Exploring
+          </button>
+        </div>
+      </section>
+    </div> 
   );
 };
 

@@ -3,6 +3,7 @@ import GallerySection from '../Screens/GallerySection'
 import HeroSection from '../Screens/HeroSection'
 import ContactSection from '../Screens/ContactSection'
 import AboutSection from '../Screens/AboutSection'
+import DestinationSection from '../Screens/DestinationSection'
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
       <HeroSection/>
       <GallerySection/>
       <AboutSection/>
+      <DestinationSection/>
       <ContactSection/>
     </div>
   )
