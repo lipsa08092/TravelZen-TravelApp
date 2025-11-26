@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Common/Navbar"
 import Footer from './Components/Common/Footer';
@@ -12,7 +12,16 @@ import Login from './Pages/LogIn';
 
 
 
-function App() {
+const App = () => {
+  
+    //Backend connect test
+  useEffect(() => {
+    fetch("http://localhost:5000/hello")
+      .then(res => res.json())
+      .then(data => console.log("Backend Response:", data))
+      .catch(err => console.log(err));
+  }, []);
+
   return (
    <BrowserRouter>
     <Navbar/>

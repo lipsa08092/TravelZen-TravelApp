@@ -1,7 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom"
 
-function DestinationSection() {
+const DestinationSection = () => {
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section
       className="w-full h-screen bg-cover bg-no-repeat bg-center flex items-center justify-center px-4 relative"
@@ -27,7 +34,9 @@ function DestinationSection() {
           Explore breathtaking destinations, mountains, and thrilling journeys.
         </p>
 
-        <Link to="/destination" className="px-10 py-3 bg-gradient-to-r from-orange-500 to-green-500 hover:scale-105 text-white font-semibold rounded-full shadow-lg transition-all duration-200">
+        <Link to="/destination" 
+        onClick={handleClick}
+        className="px-10 py-3 bg-gradient-to-r from-orange-500 to-green-500 hover:scale-105 text-white font-semibold rounded-full shadow-lg transition-all duration-200">
           Let's Start
         </Link>
       </div>

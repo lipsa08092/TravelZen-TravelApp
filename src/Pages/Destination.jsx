@@ -62,8 +62,8 @@ const destinations = [
 ];
 
 const DestinationPage = () => {
-  const slides = [...destinations, ...destinations]; 
-  const [isHovered, setIsHovered] = useState(false)
+  const slides = [...destinations, ...destinations];
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="w-full min-h-screen bg-gray-200">
@@ -88,14 +88,14 @@ const DestinationPage = () => {
         <div className="overflow-hidden w-full">
           <motion.div
             className="flex gap-6"
-            animate={isHovered ? {x: 0} : { x: ["0%", "-100%"] }}
+            animate={isHovered ? { x: 0 } : { x: ["0%", "-100%"] }}
             transition={{
               duration: 50,
               repeat: Infinity,
             }}
-            onMouseEnter={()=> setIsHovered(true)}
-            onMouseLeave={()=> setIsHovered(false)}
-        >
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {slides.map((item, id) => (
               <div
                 key={id}
@@ -121,6 +121,100 @@ const DestinationPage = () => {
               </div>
             ))}
           </motion.div>
+        </div>
+      </div>
+
+      <div className="w-full px-6 py-10 bg-gray-200">
+        <h2 className="text-3xl font-bold mb-10 text-gray-800">
+          Our Top Travel Services
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* SERVICE 1 */}
+          <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/139/139899.png
+"
+              alt="Hotel Booking"
+              className="w-20 mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold text-center">Hotel Booking</h3>
+            <p className="text-gray-600 text-center mt-2">
+              Book affordable and luxurious hotels across the globe instantly.
+            </p>
+          </div>
+
+          {/* SERVICE 2 */}
+          <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2200/2200326.png
+"
+              alt="Flight Booking"
+              className="w-20 mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold text-center">
+              Flight Booking
+            </h3>
+            <p className="text-gray-600 text-center mt-2">
+              Find the best flight deals with fast and secure booking.
+            </p>
+          </div>
+
+          {/* SERVICE 3 */}
+          <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1484/1484612.png"
+              alt="Tour Guide"
+              className="w-20 mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold text-center">Tour Guide</h3>
+            <p className="text-gray-600 text-center mt-2">
+              Get professional local guides for the best travel experience.
+            </p>
+          </div>
+
+          {/* SERVICE 4 */}
+          <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2534/2534576.png"
+              alt="Travel Insurance"
+              className="w-20 mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold text-center">
+              Travel Insurance
+            </h3>
+            <p className="text-gray-600 text-center mt-2">
+              Secure your trips with reliable and affordable travel insurance.
+            </p>
+          </div>
+
+          {/* SERVICE 5 */}
+          <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1881/1881676.png"
+              alt="Car Rentals"
+              className="w-20 mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold text-center">Car Rentals</h3>
+            <p className="text-gray-600 text-center mt-2">
+              Rent trusted cars at the best prices to explore freely.
+            </p>
+          </div>
+
+          {/* SERVICE 6 */}
+          <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/942/942748.png"
+              alt="Customized Packages"
+              className="w-20 mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold text-center">
+              Custom Packages
+            </h3>
+            <p className="text-gray-600 text-center mt-2">
+              Build your own trip plan with custom travel packages.
+            </p>
+          </div>
         </div>
       </div>
     </div>

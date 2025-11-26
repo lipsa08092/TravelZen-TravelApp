@@ -1,11 +1,14 @@
 import React from "react";
-import {
-  FaPlane,
-  FaMobileAlt,
-  FaRegSmile,
-} from "react-icons/fa";
+import { FaPlane, FaMobileAlt, FaRegSmile } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const About = () => {
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <section className=" bg-gradient-to-b from-blue-200  via-blue-100 to-blue-50 pb-20 pt-12 px-4">
       <div className="max-w-6xl mx-auto text-center mb-14">
@@ -22,19 +25,22 @@ const About = () => {
         </p>
       </div>
 
-    <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-4 mb-20">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-4 mb-20">
         {[
-          { id: 1,
+          {
+            id: 1,
             img: "https://plus.unsplash.com/premium_photo-1737392496459-f89329c1675c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             title: "Explore Worldwide",
             desc: "Discover breathtaking destinations with handpicked guides crafted for every kind of traveler.",
           },
-          { id: 2,
+          {
+            id: 2,
             img: "https://images.unsplash.com/photo-1502920514313-52581002a659",
             title: "Smart Travel Planning",
             desc: "Plan your perfect journey with optimized routes, top attractions, and smart suggestions tailored for you.",
           },
-          { id:3,
+          {
+            id: 3,
             img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
             title: "Easy Travel Experience",
             desc: "Enjoy seamless travel with essential information, cultural tips, and beautiful routes at your fingertips.",
@@ -61,7 +67,7 @@ const About = () => {
         ))}
       </div>
 
-        {/* Our Journey */}
+      {/* Our Journey */}
       <div className="max-w-6xl mx-auto mb-20">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
           OUR <span className="text-green-600">JOURNEY</span>
@@ -92,15 +98,14 @@ const About = () => {
         </div>
       </div>
 
-        {/* why traveler's love us */}
+      {/* why traveler's love us */}
       <div className="max-w-7xl mx-auto mb-28 px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
           Why Travelers <span className="text-blue-600">Love Us</span>
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-
-            {/*card-1*/}
+          {/*card-1*/}
           <div className="relative rounded-3xl overflow-hidden group shadow-xl hover:shadow-2xl transition duration-500 ">
             <img
               src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200"
@@ -124,7 +129,7 @@ const About = () => {
             </div>
           </div>
 
-            {/* card-2 */}
+          {/* card-2 */}
           <div className="relative rounded-3xl overflow-hidden group shadow-xl hover:shadow-2xl transition duration-500 ">
             <img
               src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200"
@@ -148,7 +153,7 @@ const About = () => {
             </div>
           </div>
 
-            {/*card-3*/}
+          {/*card-3*/}
           <div className="relative rounded-3xl overflow-hidden group shadow-xl hover:shadow-2xl transition duration-500">
             <img
               src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=1200"
@@ -174,16 +179,32 @@ const About = () => {
         </div>
       </div>
 
-      <div className="text-center mt-20">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">
-          Ready to Explore the World?
-        </h2>
-        <p className="text-gray-600 mb-8">
-          Join millions of travelers discovering new destinations every day.
-        </p>
-        <button className="px-8 py-3 bg-blue-600 hover:scale-95 hover:bg-blue-500 text-white font-semibold rounded-full shadow-md transition">
-          Start Your Journey
-        </button>
+      <div className="flex flex-col md:flex-row items-center md:items-center justify-center gap-10 md:gap-16 text-center md:text-left">
+        <div className="w-72 sm:w-96 md:w-[450px] flex justify-center">
+          <img
+            src="https://png.pngtree.com/png-clipart/20231029/original/pngtree-blonde-girl-enjoying-a-trip-on-their-christmas-holidays-png-image_13456921.png"
+            className="w-full h-auto object-contain drop-shadow-xl"
+            alt=""
+          />
+        </div>
+        <div className="max-w-lg text-center ">
+          <h2 className="text-3xl sm:text-4xl  font-bold text-gray-800 mb-4">
+            Ready to Explore the World?
+          </h2>
+
+          <p className="text-gray-600 mb-">
+            Join millions of travelers discovering new destinations every day.
+          </p>
+        <div className="mt-8">
+          <Link
+            to="/destination"
+            onClick={handleClick}
+            className="px-8 py-3 bg-blue-600 hover:scale-95 hover:bg-blue-500 text-white font-semibold rounded-full shadow-md transition"
+          >
+            Start Your Journey
+          </Link>
+        </div>
+        </div>
       </div>
     </section>
   );

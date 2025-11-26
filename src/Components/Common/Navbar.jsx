@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <div>
       {showNavbar && (
-        <header className="w-full fixed top-0 left-0 z-30 bg-black/30 backdrop-blur-sm shadow-md">
+        <header className="w-full fixed top-0 left-0 z-30 bg-black/30  shadow-md">
           <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4 text-white">
             {/* Logo */}
             <div className="flex items-center gap-2">
