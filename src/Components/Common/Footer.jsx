@@ -14,7 +14,7 @@ import {
 
 const FooterGradient = () => {
   return (
-    <footer className="bg-gradient-to-r from-blue-950 to-gray-800 text-white py-14">
+    <footer className="bg-gradient-to-r from-blue-950 to-gray-800 text-white py-14 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
           {/* Brand */}

@@ -14,6 +14,11 @@ const Navbar = () => {
   const handleClick = (item) => {
     setActive(item);
     setIsOpen(false);
+    window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
   };
 
   const openLogin = () => {
@@ -43,10 +48,11 @@ const Navbar = () => {
 
             {/* Desktop Menu */}
 
-            <div className="hidden md:flex gap-8 text-lg font-semibold items-center">
+            <div className="hidden md:flex gap-8 text-md font-semibold items-center">
               <Link
                 to="/"
                 onClick={() => handleClick("Home")}
+                
                 className={`relative hover:text-orange-500 pb-1 transition-all ${
                   active === "Home" ? "text-orange-600 font-bold" : ""
                 }`}
@@ -129,10 +135,10 @@ const Navbar = () => {
           {isOpen && (
             <div className="md:hidden flex flex-col bg-black/30 backdrop-blur-sm text-white px-6 py-4 space-y-4 items-center text-center ">
               <Link
-                to="/about"
-                onClick={() => handleClick("About")}
+                to="/"
+                onClick={() => handleClick("Home")}
                 className={`relative hover:text-orange-500 pb-1 transition-all ${
-                  active === "About" ? "text-orange-600 font-bold" : ""
+                  active === "Home" ? "text-orange-600 font-bold" : ""
                 }`}
               >
                 Home

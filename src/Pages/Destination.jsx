@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MdLocationOn } from "react-icons/md";
 
@@ -63,6 +63,7 @@ const destinations = [
 
 const DestinationPage = () => {
   const slides = [...destinations, ...destinations]; 
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <div className="w-full min-h-screen bg-gray-200">
@@ -87,11 +88,13 @@ const DestinationPage = () => {
         <div className="overflow-hidden w-full">
           <motion.div
             className="flex gap-6"
-            animate={{ x: ["0%", "-100%"] }}
+            animate={isHovered ? {x: 0} : { x: ["0%", "-100%"] }}
             transition={{
               duration: 50,
               repeat: Infinity,
             }}
+            onMouseEnter={()=> setIsHovered(true)}
+            onMouseLeave={()=> setIsHovered(false)}
         >
             {slides.map((item, id) => (
               <div
