@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdOutlineTravelExplore } from "react-icons/md";
+import { FaHeart } from "react-icons/fa";
 import Login from "../../Pages/LogIn";
 
 const Navbar = () => {
@@ -35,7 +36,7 @@ const Navbar = () => {
   return (
     <div>
       {showNavbar && (
-        <header className="w-full fixed top-0 left-0 z-30 bg-black/30  shadow-md">
+        <header className="w-full fixed top-0 left-0 z-30 bg-gradient-to-r from-blue-900 to-blue-950  shadow-md">
           <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4 text-white">
             {/* Logo */}
             <div className="flex items-center gap-2">
@@ -121,6 +122,7 @@ const Navbar = () => {
               >
                 Login
               </button>
+              <FaHeart className="text-2xl text-red-600"/>
             </div>
 
             {/* Mobile Menu  */}

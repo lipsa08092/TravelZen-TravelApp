@@ -1,74 +1,91 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MdLocationOn } from "react-icons/md";
+import { IoIosHeartEmpty } from "react-icons/io";
+import { Link } from "react-router-dom";
+
 
 const destinations = [
   {
     id: 1,
-    name: "Bali, Indonesia",
+    name: "Manali",
     link: "https://www.tripadvisor.in/Tourism-g294226-Bali-Vacations.html",
     desc: "Known for its forested volcanic mountains, iconic rice paddies, beaches and coral reefs.",
-    img: "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=870&auto=format&fit=crop",
+    img: "https://1.bp.blogspot.com/-GJ7E8GkwWsU/X3rDd4buXZI/AAAAAAAAAM0/igzSjG3nFakri-a0ICCI3CvEq4DMJFMHACLcBGAsYHQ/s2048/pexels-mithul-varshan-3276841.jpg",
+    price: "₹65000",
   },
   {
     id: 2,
     link: "https://www.tripadvisor.com/Tourism-g189433-Santorini_Cyclades_South_Aegean-Vacations.html",
-    name: "Santorini, Greece",
+    name: "Hawa Mahal",
     desc: "Famous for stunning sunsets, white-washed houses, and crystal-blue waters.",
-    img: "https://plus.unsplash.com/premium_photo-1697729900945-598459160f7b?q=80&w=735&auto=format&fit=crop",
+    img: "https://1.bp.blogspot.com/-p6XH6pM3Fkw/X3rDj_WqMZI/AAAAAAAAANA/PIgiMi7JYM0VU0FW_UkaX6sllLDmDhKzgCLcBGAsYHQ/s2048/pexels-mrudula-thakur-784879.jpg",
+    price: "₹40000",
   },
   {
     id: 3,
     link: "https://www.tripadvisor.in/Attractions-g188077-Activities-Swiss_Alps.html",
-    name: "Swiss Alps, Switzerland",
+    name: "Taj Mahal",
     desc: "A dreamland of snowy peaks, cozy villages, and serene landscapes.",
-    img: "https://images.unsplash.com/photo-1593186344142-ef775a6e596f?q=80&w=876&auto=format&fit=crop",
+    price: "₹35000",
+    img: "https://video.newsserve.net/v/20231113/1699858603-Taj-Mahal_hires.jpg",
   },
   {
     id: 4,
     link: "https://www.japan.travel/en/destinations/kansai/kyoto/",
-    name: "Kyoto, Japan",
+    name: "Goa Beach",
     desc: "Historic temples, cherry blossoms, peaceful gardens, and rich culture.",
-    img: "https://images.unsplash.com/photo-1706133286046-c0c8f907c4f8?q=80&w=774&auto=format&fit=crop",
+    price: "₹56000",
+    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
   },
   {
     id: 5,
     link: "https://www.tripadvisor.in/Tourism-g293953-Maldives-Vacations.html",
-    name: "Maldives",
+    name: "Kerala Backwaters",
+    price: "₹66000",
     desc: "Crystal clear waters, luxurious resorts, and relaxing tropical vibes.",
-    img: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=774&auto=format&fit=crop",
+    img: "https://tse3.mm.bing.net/th/id/OIP.VEsQqc9x09LVd1b__c144AHaEs?pid=Api&P=0&h=180",
   },
   {
     id: 6,
     link: "https://www.tripadvisor.in/Tourism-g295424-Dubai_Emirate_of_Dubai-Vacations.html",
-    name: "Dubai, UAE",
+    name: "Golden Temple",
+    price: "₹60000",
     desc: "A futuristic city with skyscrapers, luxury shopping, and desert adventures.",
-    img: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=774&auto=format&fit=crop",
+    img: "https://assets.cntraveller.in/photos/60c07fa11393a40ce8d810b0/master/pass/D8R9MT.jpg",
   },
   {
     id: 7,
     link: "https://www.tripadvisor.in/Tourism-g187147-Paris_Ile_de_France-Vacations.html",
-    name: "Paris, France",
+    name: "Darjeeling",
+    price: "₹40000",
     desc: "The city of love known for the Eiffel Tower, cafes, fashion, and art museums.",
-    img: "https://images.unsplash.com/photo-1549144511-f099e773c147?q=80&w=687&auto=format&fit=crop",
+    img: "https://thesimpletravel.com/wp-content/uploads/2021/09/Darjeeling.jpg",
   },
   {
     id: 8,
     link: "https://thebanffblog.com/itinerary-for-banff/",
-    name: "Banff, Canada",
+    name: "Rajasthan Desert",
+    price: "₹55000",
     desc: "Breathtaking turquoise lakes, alpine forests, and pure nature views.",
-    img: "https://images.unsplash.com/photo-1722524270207-3d2c92b5f5e9?q=80&w=774&auto=format&fit=crop",
+    img: "https://media.istockphoto.com/id/942152116/photo/thar-desert-jaisalmer-rajasthan-india-at-sunset-with-moody-sky.jpg?s=612x612&w=0&k=20&c=hnT7Zh-zAAyWCjzrxjyE9aOj4aXGgSOb81Wm671wwcM=",
   },
 ];
 
 const DestinationPage = () => {
   const slides = [...destinations, ...destinations];
   const [isHovered, setIsHovered] = useState(false);
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="w-full min-h-screen bg-gray-200">
       <div
-        className="w-full h-[80vh] bg-cover bg-center relative flex items-center justify-center text-white"
+        className="w-full h-[90vh] bg-cover bg-center relative flex items-center justify-center text-white"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1501785888041-af3ef285b470')",
@@ -99,24 +116,38 @@ const DestinationPage = () => {
             {slides.map((item, id) => (
               <div
                 key={id}
-                className="min-w-[320px] bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+                className="min-w-[320px] bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer relative"
               >
                 <img
                   src={item.img}
                   alt={item.name}
                   className="h-52 w-full object-cover"
                 />
+                <IoIosHeartEmpty className="absolute top-4 right-4 text-3xl bg-white text-black rounded-full p-1 drop-shadow-lg" />
                 <div className="p-4">
                   <h3 className="text-xl font-semibold flex items-center gap-2">
                     <MdLocationOn className="text-red-500" /> {item.name}
                   </h3>
                   <p className="text-gray-600 mt-2">{item.desc}</p>
-                  <a
-                    href={item.link}
-                    className="mt-4 flex items-center gap-2 text-blue-600 font-medium underline"
-                  >
-                    Explore
-                  </a>
+                  <p className=" text-blue-400 font-bold text-3xl mt-2">
+                    {item.price}
+                  </p>
+
+                  <div className="flex justify-between">
+                    <a
+                      href={item.link}
+                      className="mt-4 flex items-center gap-2 text-blue-600 font-medium underline"
+                    >
+                      Explore
+                    </a>
+                    <Link
+                      to={`/destination/${item.id}`}
+                      onClick={handleClick}
+                      className="mt-4 text-semibold text-white bg-orange-500 px-4 py-1 rounded-full hover:scale-95"
+                    >
+                      Book Now
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}

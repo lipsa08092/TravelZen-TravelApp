@@ -103,7 +103,7 @@ const handleClick = () => {
           <span className="text-blue-600">Why</span> Traveler's <span className="text-red-500">Love Us</span>
         </h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-12">
             
         {/* card 1 */}
           <div className="relative rounded-3xl overflow-hidden group shadow-xl hover:shadow-2xl transition duration-500 ">
@@ -183,7 +183,7 @@ const handleClick = () => {
         <div className="w-72 sm:w-96 md:w-[450px] flex justify-center">
           <img
             src="https://png.pngtree.com/png-clipart/20231029/original/pngtree-blonde-girl-enjoying-a-trip-on-their-christmas-holidays-png-image_13456921.png"
-            className="w-full h-auto object-contain drop-shadow-xl"
+            className="w-full h-auto object-contain "
             alt=""
           />
         </div>
