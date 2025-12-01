@@ -17,12 +17,12 @@ const destinations = [
     img: "https://1.bp.blogspot.com/-GJ7E8GkwWsU/X3rDd4buXZI/AAAAAAAAAM0/igzSjG3nFakri-a0ICCI3CvEq4DMJFMHACLcBGAsYHQ/s2048/pexels-mithul-varshan-3276841.jpg",
     price: "₹65000",
     gallery: [
-      "https://plus.unsplash.com/premium_photo-1677829177642-30def98b0963?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFsaSUyQyUyMGluZG9uZXNpYXxlbnwwfHwwfHx8MA%3D%3D",
-      "https://plus.unsplash.com/premium_photo-1669317566483-d3327adeda10?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmFsaSUyQyUyMGluZG9uZXNpYXxlbnwwfHwwfHx8MA%3D%3D",
-      "https://images.unsplash.com/photo-1701605305526-7bc0c634543f?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmFsaSUyQyUyMGluZG9uZXNpYXxlbnwwfHwwfHx8MA%3D%3D",
-      "https://images.unsplash.com/photo-1655289112205-d3b56c6b61f8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhbGklMkMlMjBpbmRvbmVzaWF8ZW58MHx8MHx8fDA%3D",
-      "https://plus.unsplash.com/premium_photo-1678303396234-4180231353df?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGJhbGklMkMlMjBpbmRvbmVzaWF8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1657788781951-d6beac09d66c?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGJhbGklMkMlMjBpbmRvbmVzaWF8ZW58MHx8MHx8fDA%3D",
+      "https://tse1.mm.bing.net/th/id/OIP.t0EbRi_t3k8qy3LB67-2QgHaE8?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.AAjUeuhJYzTNkUw06HocGAHaEx?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.rCf-jpbGVKADWpo0h5npVgHaE8?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.oMUUl8u__Yao9ZM6zXBGlwHaEK?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.ubra_0l5Ken0TzPSFeUDfAHaEK?pid=Api&P=0&h=180",
+      "https://tse1.mm.bing.net/th/id/OIP.eTXmKqZyHkk7c8F8MC4ycAHaE8?pid=Api&P=0&h=180",
     ],
   },
   {
@@ -33,12 +33,12 @@ const destinations = [
     img: "https://1.bp.blogspot.com/-p6XH6pM3Fkw/X3rDj_WqMZI/AAAAAAAAANA/PIgiMi7JYM0VU0FW_UkaX6sllLDmDhKzgCLcBGAsYHQ/s2048/pexels-mrudula-thakur-784879.jpg",
     price: "₹40000",
     gallery: [
-      "https://plus.unsplash.com/premium_photo-1661963643348-e95c6387ee8a?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FudG9yaW5pJTIwZ3JlZWNlfGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FudG9yaW5pJTIwZ3JlZWNlfGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1560703650-ef3e0f254ae0?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2FudG9yaW5pJTIwZ3JlZWNlfGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1508855173839-a6d69c12573a?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNhbnRvcmluaSUyMGdyZWVjZXxlbnwwfHwwfHx8MA%3D%3D",
-      "https://plus.unsplash.com/premium_photo-1661962663771-e096c9ffccbb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNhbnRvcmluaXxlbnwwfHwwfHx8MA%3D%3D",
-      "https://images.unsplash.com/photo-1517926967795-31943e805dae?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHNhbnRvcmluaXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://tse3.mm.bing.net/th/id/OIP._uvuyaX7_VoOCHO3fQynPQHaE_?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.t8uat969Ab3ZQAyFncSe1wHaE7?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.YIPZZSrcc5Xj25NnB0j4ZgHaE3?pid=Api&P=0&h=180",
+      "https://tse3.mm.bing.net/th/id/OIP.ILB_XkQWe5rzGgHneBZwfgHaFW?pid=Api&P=0&h=180",
+      "https://tse3.mm.bing.net/th/id/OIP.UPFMd6_DPkGcB06x4hFtKQHaE8?pid=Api&P=0&h=180",
+      "https://tse1.mm.bing.net/th/id/OIP.-nPwKs10EjexMokSZcUkrAHaEK?pid=Api&P=0&h=180",
     ],
   },
   {
@@ -49,28 +49,28 @@ const destinations = [
     price: "₹35000",
     img: "https://video.newsserve.net/v/20231113/1699858603-Taj-Mahal_hires.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1719343112563-f121bae8daf0?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3dpc3MlMjBBbHBzJTIwJTJDJTIwc3dpdHplcmxhbmR8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1548623234-94b1dcd906a2?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3dpc3MlMjBBbHBzJTIwJTJDJTIwc3dpdHplcmxhbmR8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1719343111824-dd4a0ee56934?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3dpc3MlMjBBbHBzJTIwJTJDJTIwc3dpdHplcmxhbmR8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1692842447780-5371d41c1068?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHN3aXNzJTIwQWxwcyUyMCUyQyUyMHN3aXR6ZXJsYW5kfGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U3dpc3MlMjBBbHBzJTJDJTIwc3dpdHplcmxhbmR8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1609554189997-a4932370a926?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fFN3aXNzJTIwQWxwcyUyQyUyMHN3aXR6ZXJsYW5kfGVufDB8fDB8fHww",
+      "https://tse2.mm.bing.net/th/id/OIP.09aeslk4jmOUZbt-UZl96gHaEm?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.Hl9AVZ6HMgproKyNFf1WugHaE8?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.oHeSTUF5Kzl6ft7A1aPPwQHaE7?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.3MLkAC-iURdWBgZ3TTtPcQHaE8?pid=Api&P=0&h=180",
+      "https://tse1.mm.bing.net/th/id/OIP.4IeMZh6X9Vozagx5Bkc-OwHaE5?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.3-t5Jbv-oXmzFGRdIg2ogwHaFj?pid=Api&P=0&h=180",
     ],
   },
   {
-   id: 4,
+    id: 4,
     link: "https://www.japan.travel/en/destinations/kansai/kyoto/",
     name: "Goa Beach",
     desc: "Historic temples, cherry blossoms, peaceful gardens, and rich culture.",
     price: "₹56000",
     img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     gallery: [
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a3lvdG8lMkMlMjBqYXBhbnxlbnwwfHwwfHx8MA%3D%3D",
-      "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a3lvdG8lMkMlMjBqYXBhbnxlbnwwfHwwfHx8MA%3D%3D",
-      "https://images.unsplash.com/photo-1713552422839-6931b177d2da?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGt5b3RvJTJDJTIwamFwYW58ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1652613129552-b0d3cae86cfe?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGt5b3RvJTJDJTIwamFwYW58ZW58MHx8MHx8fDA%3D",
-      "https://plus.unsplash.com/premium_photo-1723983555279-8de1f6e633e3?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3lvdG98ZW58MHx8MHx8fDA%3D",
-      "https://plus.unsplash.com/premium_photo-1673285285994-6bfff235db97?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8a3lvdG98ZW58MHx8MHx8fDA%3D",
+      "https://tse3.mm.bing.net/th/id/OIP.rGcq7JHuXTpM6SNcQXlF3QHaEK?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.Bn1mRx0jFZ0E5jXJdtRVqAHaE7?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.v6tjpkl8mssyysmMWwu0zgHaEX?pid=Api&P=0&h=180",
+      "https://tse3.mm.bing.net/th/id/OIP.CnqLBO_eXpDTzfHb0Dj7BwHaE7?pid=Api&P=0&h=180",
+      "https://tse1.mm.bing.net/th/id/OIP.SrJybnBjaulqG62_I41FBwHaE8?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.hxMgOLqN2patUfyfBuZ9jQHaE7?pid=Api&P=0&h=180",
     ],
   },
   {
@@ -81,12 +81,12 @@ const destinations = [
     desc: "Crystal clear waters, luxurious resorts, and relaxing tropical vibes.",
     img: "https://tse3.mm.bing.net/th/id/OIP.VEsQqc9x09LVd1b__c144AHaEs?pid=Api&P=0&h=180",
     gallery: [
-      "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFsZGl2ZXN8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZGl2ZXN8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1hbGRpdmVzfGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1595184979141-090792f6b578?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1hbGRpdmVzfGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1578922746465-3a80a228f223?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFsZGl2ZXN8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1576158831003-d41033ec31fd?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1hbGRpdmVzfGVufDB8fDB8fHww",
+      "https://tse1.mm.bing.net/th/id/OIP.oxby2DhxG69D3RWsl5QHMAHaEK?pid=Api&P=0&h=180",
+      "https://tse3.mm.bing.net/th/id/OIP.KVJuxRRZxjd-bA8E5vQnxgHaE8?pid=Api&P=0&h=180",
+      "https://tse1.mm.bing.net/th/id/OIP.FqzesQ9tQcJIlI6D-RkuHgHaE7?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.ZfhKkml-MIOfrB73hv2btwHaEK?pid=Api&P=0&h=180",
+      "https://tse3.mm.bing.net/th/id/OIP.aY2bWZrLy8hna1aiaIunowHaEc?pid=Api&P=0&h=180",
+      "https://tse3.mm.bing.net/th/id/OIP.gZpuP0gwRNtRyyvBpguohgHaFI?pid=Api&P=0&h=180",
     ],
   },
   {
@@ -97,12 +97,12 @@ const destinations = [
     desc: "A futuristic city with skyscrapers, luxury shopping, and desert adventures.",
     img: "https://assets.cntraveller.in/photos/60c07fa11393a40ce8d810b0/master/pass/D8R9MT.jpg",
     gallery: [
-      "https://plus.unsplash.com/premium_photo-1697729914552-368899dc4757?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZHViYWl8ZW58MHx8MHx8fDA%3D",
-      "https://plus.unsplash.com/premium_photo-1661943659036-aa040d92ee64?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZHViYWl8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1628859017536-c2f1d69f3c84?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZHViYWl8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1546412414-8035e1776c9a?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGR1YmFpfGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1543579596-2c11997c7706?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGR1YmFpfGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1489516408517-0c0a15662682?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGR1YmFpfGVufDB8fDB8fHww",
+      "https://tse1.mm.bing.net/th/id/OIP.M1UfaN-T5oCS2quqHQzSoQHaE8?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.PgNcX2YBB2A_Qn0waxH1VQHaE7?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.NoJ1kRDOZ4w-yCn8SaOMgAHaFj?pid=Api&P=0&h=180",
+      "https://tse3.mm.bing.net/th/id/OIP.TKYkQn65haJnpL37bhr5IwHaEK?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.AN2i7eRrHs27dhWf1Pb6AAHaGW?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.SDIr1PQvUkHlDTwsuMQsyAHaE5?pid=Api&P=0&h=180",
     ],
   },
   {
@@ -113,12 +113,12 @@ const destinations = [
     desc: "The city of love known for the Eiffel Tower, cafes, fashion, and art museums.",
     img: "https://thesimpletravel.com/wp-content/uploads/2021/09/Darjeeling.jpg",
     gallery: [
-      "https://plus.unsplash.com/premium_photo-1719430571386-b32cec341373?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://plus.unsplash.com/premium_photo-1718893372476-777ff4036339?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://plus.unsplash.com/premium_photo-1664303991463-36449a65d3d6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://plus.unsplash.com/premium_photo-1661962726504-fa8f464a1bb8?q=80&w=844&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1623009070764-45002990256e?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGFyaXMlMkMlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D",
-      "https://plus.unsplash.com/premium_photo-1666283181610-b95ee7e55465?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGFyaXMlMkMlMjBmcmFuY2V8ZW58MHx8MHx8fDA%3D",
+      "https://tse3.mm.bing.net/th/id/OIP.srumT7keHGBVp3K2Fmgn4gHaEn?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.PObM3nvMR6aVnSK1mXYTgAHaEo?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.gGSYdeFWBe7T-F1ml-TiEwHaE8?pid=Api&P=0&h=180",
+      "https://tse1.mm.bing.net/th/id/OIP.OQtFBhLlHQt6gVp_TC_RQAHaD4?pid=Api&P=0&h=180",
+      "https://tse1.mm.bing.net/th/id/OIP.RqrK49usJPddavgZfsn7UAHaEK?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.gGSYdeFWBe7T-F1ml-TiEwHaE8?pid=Api&P=0&h=180",
     ],
   },
   {
@@ -129,12 +129,12 @@ const destinations = [
     desc: "Breathtaking turquoise lakes, alpine forests, and pure nature views.",
     img: "https://media.istockphoto.com/id/942152116/photo/thar-desert-jaisalmer-rajasthan-india-at-sunset-with-moody-sky.jpg?s=612x612&w=0&k=20&c=hnT7Zh-zAAyWCjzrxjyE9aOj4aXGgSOb81Wm671wwcM=",
     gallery: [
-      "https://images.unsplash.com/photo-1630618359030-87764450427d?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEJhbmZmJTJDJTIwQ2FuYWRhfGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1749955945621-ff1cbc94154c?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fEJhbmZmJTJDJTIwQ2FuYWRhfGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1630618358458-173465a50927?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8QmFuZmYlMkMlMjBDYW5hZGF8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1605553922458-4d3cb3c55bd9?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmFuZmYlMkMlMjBDYW5hZGF8ZW58MHx8MHx8fDA%3D",
-      "https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuZmYlMjBjYW5hZGF8ZW58MHx8MHx8fDA%3D",
-      "https://plus.unsplash.com/premium_photo-1708575888205-20da84f6af45?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGJhbmZmJTIwY2FuYWRhfGVufDB8fDB8fHww",
+      "https://tse2.mm.bing.net/th/id/OIP.CA--mxIc6ah88arIVe81gQHaEK?pid=Api&P=0&h=180",
+      "https://tse3.mm.bing.net/th/id/OIP.FkugzxfJZ74oRi7Hoj_p6gHaEP?pid=Api&P=0&h=180",
+      "https://tse3.mm.bing.net/th/id/OIP.GV40ETevhuXjh-QIYNZ5WAHaEK?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.DAr9m5i78-qBPR7IyUlNgQHaEK?pid=Api&P=0&h=180",
+      "https://tse2.mm.bing.net/th/id/OIP.IRE2HthibK5oPcXEmxpUGgHaEK?pid=Api&P=0&h=180",
+      "https://tse4.mm.bing.net/th/id/OIP.wDp4pLXDernZWTyjYVflEwHaE8?pid=Api&P=0&h=180",
     ],
   },
 ];
@@ -151,13 +151,15 @@ const DestinationDetails = () => {
     car: false,
     food: false,
   });
-  const basePrice = place.price ? Number(place.price.replace("$", "")) : 1000;
-
+  const basePrice = place.price ? Number(place.price.replace("₹", "")) : 2000;
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const extraPrices = {
-    guide: 500,
-    hotel: 300,
-    car: 150,
-    food: 80,
+    guide: 5000,
+    hotel: 3000,
+    car: 2500,
+    food: 2000,
   };
   const calculateTotal = () => {
     let total = basePrice;
@@ -169,14 +171,16 @@ const DestinationDetails = () => {
   };
 
   const handleBooking = () => {
+    const loggedUser = localStorage.getItem("username") || "GuestUser";
     const finalBooking = {
-      id: place.id,
-      name: place.name,
-      img: place.img,
-      selectedOptions: options,
-      basePrice,
-      totalPrice: calculateTotal(),
-    };
+  id: place.id,
+  userName: loggedUser,
+  name: place.name,     
+  img: place.img,
+  selectedOptions: options,
+  basePrice,
+  totalPrice: calculateTotal(),
+};
 
     localStorage.setItem("travelBooking", JSON.stringify(finalBooking));
     navigate("/booking-summary");
@@ -282,13 +286,16 @@ const DestinationDetails = () => {
       <div className="mt-10 p-5  rounded-xl  text-center">
         <h2 className="text-3xl font-bold text-gray-800">Total Price</h2>
         <p className="text-4xl font-extrabold text-green-600 mt-2">
-          ${calculateTotal()}
+          ₹{calculateTotal()}
         </p>
       </div>
 
       <div className=" mt-8 w-full flex justify-center">
         <button
-          onClick={handleBooking}
+          onClick={() => {
+            handleClick();
+            handleBooking();
+          }}
           className="bg-orange-500 hover:bg-orange-600 transition text-white px-10 py-4 rounded-full text-xl shadow-xl"
         >
           Continue to Final Booking

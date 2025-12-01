@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MdLocationOn } from "react-icons/md";
-import { IoIosHeartEmpty } from "react-icons/io";
-import { Link } from "react-router-dom";
-
+import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
+import LoginPopup from "../Components/LoginPopup";
+import { useNavigate } from "react-router-dom";
 
 const destinations = [
   {
@@ -75,6 +75,24 @@ const destinations = [
 const DestinationPage = () => {
   const slides = [...destinations, ...destinations];
   const [isHovered, setIsHovered] = useState(false);
+
+  const [wishlist, setWishlist] = useState([]);
+  // const [booking, setBooking] = useState([]);
+  const [userName, setUserName] = useState(null);
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("username");
+    setUserName(loggedIn);
+
+    if (loggedIn) {
+      const savedData = JSON.parse(localStorage.getItem(loggedIn)) || {};
+      setWishlist(savedData.wishlist || []);
+      // setBooking(savedData.booking || []);
+    }
+  }, []);
+
   const handleClick = () => {
     window.scrollTo({
       top: 0,
@@ -82,8 +100,60 @@ const DestinationPage = () => {
     });
   };
 
+  //wishlist
+  const updateWishlist = (updated) => {
+    setWishlist(updated);
+
+    const userData = JSON.parse(localStorage.getItem(userName)) || {};
+    localStorage.setItem(
+      userName,
+      JSON.stringify({ ...userData, wishlist: updated })
+    );
+    window.dispatchEvent(new Event("wishlistChange"));
+  };
+  const toggleWishlist = (name) => {
+    if (!userName) {
+      setShowLoginPopup(true);
+      return;
+    }
+    const updated = wishlist.includes(name)
+      ? wishlist.filter((item) => item !== name)
+      : [...wishlist, name];
+
+    updateWishlist(updated);
+  };
+
+  //booking
+  // const updateBooking = (updated) => {
+  //   setBooking(updated);
+
+  //   const userData = JSON.parse(localStorage.getItem(userName)) || {};
+  //   localStorage.setItem(
+  //     userName,
+  //     JSON.stringify({ ...userData, booking: updated })
+  //   );
+  //   window.dispatchEvent(new Event("bookingChange"));
+  // };
+
+  const toggleBooking = (name) => {
+    if (!userName) {
+      setShowLoginPopup(true);
+      return;
+    }
+
+    // const updated = booking.includes(name)
+    //   ? booking.filter((item) => item !== name)
+    //   : [...booking, name];
+
+    // updateBooking(updated);
+  };
+
   return (
     <div className="w-full min-h-screen bg-gray-200">
+      {showLoginPopup && (
+        <LoginPopup onClose={() => setShowLoginPopup(false)} />
+      )}
+
       <div
         className="w-full h-[90vh] bg-cover bg-center relative flex items-center justify-center text-white"
         style={{
@@ -123,7 +193,18 @@ const DestinationPage = () => {
                   alt={item.name}
                   className="h-52 w-full object-cover"
                 />
-                <IoIosHeartEmpty className="absolute top-4 right-4 text-3xl bg-white text-black rounded-full p-1 drop-shadow-lg" />
+                {wishlist.includes(item.name) ? (
+                  <IoIosHeart
+                    onClick={() => toggleWishlist(item.name)}
+                    className="absolute top-4 right-4 text-3xl text-red-500 cursor-pointer"
+                  />
+                ) : (
+                  <IoIosHeartEmpty
+                    onClick={() => toggleWishlist(item.name)}
+                    className="absolute top-4 right-4 text-3xl text-black bg-white rounded-full p-1 cursor-pointer"
+                  />
+                )}
+
                 <div className="p-4">
                   <h3 className="text-xl font-semibold flex items-center gap-2">
                     <MdLocationOn className="text-red-500" /> {item.name}
@@ -140,13 +221,19 @@ const DestinationPage = () => {
                     >
                       Explore
                     </a>
-                    <Link
-                      to={`/destination/${item.id}`}
-                      onClick={handleClick}
+                    <button
+                      onClick={() => {
+                        if (!userName) {
+                          setShowLoginPopup(true);
+                          return;
+                        }
+                        toggleBooking(item.name);
+                        navigate(`/destination/${item.id}`);
+                      }}
                       className="mt-4 text-semibold text-white bg-orange-500 px-4 py-1 rounded-full hover:scale-95"
                     >
                       Book Now
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
