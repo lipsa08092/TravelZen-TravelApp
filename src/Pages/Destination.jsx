@@ -4,6 +4,7 @@ import { MdLocationOn } from "react-icons/md";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import LoginPopup from "../Components/LoginPopup";
 import { useNavigate } from "react-router-dom";
+import useWishlist from "../hooks/useWishlist";
 
 const destinations = [
   {
@@ -76,22 +77,11 @@ const DestinationPage = () => {
   const slides = [...destinations, ...destinations];
   const [isHovered, setIsHovered] = useState(false);
 
-  const [wishlist, setWishlist] = useState([]);
-  // const [booking, setBooking] = useState([]);
-  const [userName, setUserName] = useState(null);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const loggedIn = localStorage.getItem("username");
-    setUserName(loggedIn);
-
-    if (loggedIn) {
-      const savedData = JSON.parse(localStorage.getItem(loggedIn)) || {};
-      setWishlist(savedData.wishlist || []);
-      // setBooking(savedData.booking || []);
-    }
-  }, []);
+  const userName = localStorage.getItem("username");
+  const { wishlist, toggleWishlist } = useWishlist(userName);
 
   const handleClick = () => {
     window.scrollTo({
@@ -100,58 +90,16 @@ const DestinationPage = () => {
     });
   };
 
-  //wishlist
-  const updateWishlist = (updated) => {
-    setWishlist(updated);
-
-    const userData = JSON.parse(localStorage.getItem(userName)) || {};
-    localStorage.setItem(
-      userName,
-      JSON.stringify({ ...userData, wishlist: updated })
-    );
-    window.dispatchEvent(new Event("wishlistChange"));
-  };
-  const toggleWishlist = (name) => {
-    if (!userName) {
-      setShowLoginPopup(true);
-      return;
-    }
-    const updated = wishlist.includes(name)
-      ? wishlist.filter((item) => item !== name)
-      : [...wishlist, name];
-
-    updateWishlist(updated);
-  };
-
-  //booking
-  // const updateBooking = (updated) => {
-  //   setBooking(updated);
-
-  //   const userData = JSON.parse(localStorage.getItem(userName)) || {};
-  //   localStorage.setItem(
-  //     userName,
-  //     JSON.stringify({ ...userData, booking: updated })
-  //   );
-  //   window.dispatchEvent(new Event("bookingChange"));
-  // };
-
-  const toggleBooking = (name) => {
-    if (!userName) {
-      setShowLoginPopup(true);
-      return;
-    }
-
-    // const updated = booking.includes(name)
-    //   ? booking.filter((item) => item !== name)
-    //   : [...booking, name];
-
-    // updateBooking(updated);
-  };
+  useEffect(() => {
+    const showPopup = () => setShowLoginPopup(true);
+    window.addEventListener("showLoginPopup", showPopup);
+    return () => window.removeEventListener("showLoginPopup", showPopup);
+  }, []);
 
   return (
     <div className="w-full min-h-screen bg-gray-200">
       {showLoginPopup && (
-        <LoginPopup onClose={() => setShowLoginPopup(false)} />
+        <LoginPopup onClose={() => setShowLoginPopup(false)} type="wishlist" />
       )}
 
       <div
@@ -193,15 +141,15 @@ const DestinationPage = () => {
                   alt={item.name}
                   className="h-52 w-full object-cover"
                 />
-                {wishlist.includes(item.name) ? (
+                {wishlist.some((w) => w.id === item.id) ? (
                   <IoIosHeart
-                    onClick={() => toggleWishlist(item.name)}
                     className="absolute top-4 right-4 text-3xl text-red-500 cursor-pointer"
+                    onClick={() => toggleWishlist(item)}
                   />
                 ) : (
                   <IoIosHeartEmpty
-                    onClick={() => toggleWishlist(item.name)}
-                    className="absolute top-4 right-4 text-3xl text-black bg-white rounded-full p-1 cursor-pointer"
+                    className="absolute top-4 right-4 text-3xl text-black bg-white p-1 rounded-full cursor-pointer"
+                    onClick={() => toggleWishlist(item)}
                   />
                 )}
 
@@ -210,7 +158,7 @@ const DestinationPage = () => {
                     <MdLocationOn className="text-red-500" /> {item.name}
                   </h3>
                   <p className="text-gray-600 mt-2">{item.desc}</p>
-                  <p className=" text-blue-400 font-bold text-3xl mt-2">
+                  <p className=" text-sky-600 font-bold font-serif text-3xl mt-2">
                     {item.price}
                   </p>
 
@@ -223,11 +171,7 @@ const DestinationPage = () => {
                     </a>
                     <button
                       onClick={() => {
-                        if (!userName) {
-                          setShowLoginPopup(true);
-                          return;
-                        }
-                        toggleBooking(item.name);
+                        handleClick();
                         navigate(`/destination/${item.id}`);
                       }}
                       className="mt-4 text-semibold text-white bg-orange-500 px-4 py-1 rounded-full hover:scale-95"
@@ -251,8 +195,7 @@ const DestinationPage = () => {
           {/* SERVICE 1 */}
           <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/139/139899.png
-"
+              src="https://cdn-icons-png.flaticon.com/512/139/139899.png"
               alt="Hotel Booking"
               className="w-20 mx-auto mb-4"
             />
@@ -265,8 +208,7 @@ const DestinationPage = () => {
           {/* SERVICE 2 */}
           <div className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/2200/2200326.png
-"
+              src="https://cdn-icons-png.flaticon.com/512/2200/2200326.png"
               alt="Flight Booking"
               className="w-20 mx-auto mb-4"
             />

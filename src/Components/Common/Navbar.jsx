@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   MdOutlineTravelExplore,
   MdFavorite,
@@ -16,38 +16,19 @@ const Navbar = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [userName, setUserName] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
-
-  const [wishlist, setWishlist] = useState([]);
-  const [booking, setBooking] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const loggedIn = localStorage.getItem("username");
-    if (loggedIn) setUserName(loggedIn);
-
-    const savedData = JSON.parse(localStorage.getItem(loggedIn)) || {};
-    setWishlist(savedData.wishlist || []);
-    setBooking(savedData.booking|| []);
+    const savedUser = localStorage.getItem("username");
+    if (savedUser) setUserName(savedUser);
   }, []);
 
+  // wishlist updates
   useEffect(() => {
-    const loggedIn = localStorage.getItem("username");
-    if (loggedIn) setUserName(loggedIn);
-
-    const loadData = () => {
-      const savedData = JSON.parse(localStorage.getItem(loggedIn)) || {};
-      setWishlist(savedData.wishlist || []);
-      setBooking(savedData.booking || []);
-    };
-    loadData();
-    window.addEventListener("wishlistChange", loadData);
-    window.addEventListener("bookingChange", loadData);
-
-    return () => {
-      window.removeEventListener("wishlistChange", loadData);
-      window.removeEventListener("bookingChange", loadData);
-    };
+    const refresh = () => setUserName(localStorage.getItem("username"));
+    window.addEventListener("wishlistChange", refresh);
+    return () => window.removeEventListener("wishlistChange", refresh);
   }, []);
-
 
   const handleClick = (item) => {
     setActive(item);
@@ -55,15 +36,15 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("username");
+  const logout = () => {
     setUserName(null);
+    localStorage.removeItem("username");
     setShowProfile(false);
+     window.dispatchEvent(new Event("wishlistChange"));
   };
 
   return (
     <div>
-      {/* Navbar */}
       <header className="w-full fixed top-0 left-0 z-30 bg-gradient-to-r from-blue-900 to-blue-950 shadow-md">
         <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4 text-white">
           <div className="flex items-center gap-2">
@@ -153,48 +134,26 @@ const Navbar = () => {
 
                 {showProfile && (
                   <div className="absolute -right-14 mt-2 w-60 backdrop-blur-md bg-black/40 text-white rounded-lg shadow-lg p-4 flex flex-col gap-3 z-50">
-                    <div className="flex items-center gap-2">
+                    <div
+                      className="flex items-center gap-2 cursor-pointer"
+                      onClick={() => {
+                        navigate("/wishlist");
+                        setShowProfile(false);
+                        handleClick();
+                      }}
+                    >
                       <MdFavorite className="text-red-600 text-xl" />
                       <span className="font-bold text-red-500">Wishlist</span>
                     </div>
-                    <div className="flex gap-2 text-sm text-gray-100 ml-1">
-                      {wishlist.length > 0 ? (
-                        wishlist.map((item, idx) => (
-                          <span
-                            key={idx}
-                            className="bg-white/20 px-2 py-1 rounded-md"
-                            title={item}
-                          >
-                            {item}
-                          </span>
-                        ))
-                      ) : (
-                        <span>No items</span>
-                      )}
-                    </div>
+
                     <div className="flex items-center gap-2 mt-2">
                       <MdOutlineBook className="text-blue-600 text-xl" />
                       <span className="font-bold text-blue-700">Bookings</span>
                     </div>
-                    <div className="flex  gap-2 text-sm text-gray-100 ml-1">
-                      {booking.length > 0 ? (
-                        booking.map((item, idx) => (
-                          <span
-                            key={idx}
-                            className="bg-white/20 px-2 py-1 rounded-md truncate"
-                            title={item}
-                          >
-                            {item}
-                          </span>
-                        ))
-                      ) : (
-                        <span>No bookings</span>
-                      )}
-                    </div>
 
                     <div className="flex justify-center items-center">
                       <button
-                        onClick={handleLogout}
+                        onClick={logout}
                         className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 flex items-center justify-center gap-2"
                       >
                         <IoLogOutOutline className="text-lg" />
@@ -285,52 +244,23 @@ const Navbar = () => {
 
                 {showProfile && (
                   <div className="absolute top-12 backdrop-blur-md bg-black/70 text-white w-60 rounded-lg shadow-lg p-4 flex flex-col gap-3 z-50 transition duration-150">
-                    <div className="flex items-center gap-2">
-                      <MdFavorite className="text-red-500 text-x" />
-                      <span className="font-semibold">Wishlist</span>
+                    <div
+                      className="flex items-center gap-2 cursor-pointer"
+                      onClick={() => {
+                        navigate("/wishlist");
+                        setShowProfile(false);
+                        handleClick();
+                      }}
+                    >
+                      <MdFavorite className="text-red-600 text-xl" />
+                      <span className="font-bold text-red-500">Wishlist</span>
                     </div>
-
-                    <div className="flex gap-2 text-sm text-gray-100 ml-1">
-                      {wishlist.length > 0 ? (
-                        wishlist.map((item, idx) => (
-                          <span
-                            key={idx}
-                            className="bg-white/20 px-2 py-1 rounded-md truncate"
-                            title={item}
-                          >
-                            {item}
-                          </span>
-                        ))
-                      ) : (
-                        <span>No Wishlists</span>
-                      )}
-                    </div>
-
                     <div className="flex items-center gap-2 mt-2">
                       <MdOutlineBook className="text-blue-500 text-xl" />
                       <span className="font-semibold">Bookings</span>
                     </div>
-
-                  <div className="flex gap-2 text-sm text-gray-100 ml-1">
-                      {booking.length > 0 ? (
-                        booking.map((item, idx) => (
-                          <span
-                            key={idx}
-                            className="bg-white/20 px-2 py-1 rounded-md truncate"
-                            title={item}
-                          >
-                            {item}
-                          </span>
-                        ))
-                      ) : (
-                        <span>No bookings</span>
-                      )}
-                    </div>
                     <div className="flex justify-center items-center">
-                      <button
-                        onClick={handleLogout}
-                        className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 flex items-center justify-center gap-2"
-                      >
+                      <button className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 flex items-center justify-center gap-2">
                         <IoLogOutOutline className="text-lg font-semibold" />
                         Logout
                       </button>
@@ -354,7 +284,11 @@ const Navbar = () => {
       {showLogin && (
         <Login
           onClose={() => setShowLogin(false)}
-          onLoginSuccess={(name) => setUserName(name)}
+          onLoginSuccess={(name) => {
+            setUserName(name);
+            localStorage.setItem("username", name);
+            window.dispatchEvent(new Event("wishlistChange"));
+          }}
         />
       )}
     </div>
