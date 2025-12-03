@@ -171,6 +171,10 @@ const DestinationPage = () => {
                     </a>
                     <button
                       onClick={() => {
+                        if (!userName) {
+                          window.dispatchEvent(new Event("showLoginPopup"));
+                          return;
+                        }
                         handleClick();
                         navigate(`/destination/${item.id}`);
                       }}

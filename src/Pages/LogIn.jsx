@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { IoCloseSharp } from "react-icons/io5";
+import React, { useState} from "react";
+import { useNavigate } from "react-router-dom";
 
-const Login = ({ onClose, onLoginSuccess }) => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => (document.body.style.overflow = "auto");
-  }, []);
+  const navigate=useNavigate()
 
   const handleSubmit = () => {
     if (!username || !password) {
@@ -17,28 +13,21 @@ const Login = ({ onClose, onLoginSuccess }) => {
     }
 
     localStorage.setItem("username", username);
-    onLoginSuccess(username);
-    onClose();
+
+    window.dispatchEvent(new Event("wishlistChange")); 
+    navigate("/");
   };
 
-  return (
-    <div
-      className="fixed inset-0 z-[100] w-full h-full flex justify-center items-center bg-black/50"
+
+return (
+    <div className="min-h-screen flex justify-center items-center bg-cover bg-center"
       style={{
         backgroundImage:
           "url('https://wallpapercave.com/wp/wp7287112.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     >
-      <div className="relative z-10 bg-black/70 p-6 sm:p-8 rounded-xl border border-white/20 shadow-2xl w-[320px] sm:w-[350px] md:w-[420px]">
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 text-white text-2xl hover:text-black"
-        >
-          <IoCloseSharp />
-        </button>
-
+      <div className="bg-black/70 p-8 rounded-xl border border-white/20 shadow-2xl w-[350px]">
+        
         <h2 className="text-white text-3xl font-semibold text-center mb-6">
           Login
         </h2>

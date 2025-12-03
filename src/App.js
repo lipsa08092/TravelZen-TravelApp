@@ -12,6 +12,7 @@ import DestinationDetails from "./Screens/DestinationDetails";
 import BookingSummary from "./Screens/BookingSummary";
 import Login from "./Pages/LogIn";
 import Wishlist from "./Pages/Wishlist";
+import Bookings from "./Pages/Bookings";
 
 const App = () => {
   //Backend connect test
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/destination/:id" element={<DestinationDetails />} />
         <Route path="/booking-summary" element={<BookingSummary />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/bookings" element={<Bookings />} />
       </Routes>
       <Footer />
     </BrowserRouter>

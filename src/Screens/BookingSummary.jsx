@@ -1,35 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { MdLocationOn } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-
+import useBooking from "../hooks/useBooking";
 
 const BookingSummary = () => {
-  const booking = JSON.parse(localStorage.getItem("travelBooking"));
   const [showPopup, setShowPopup] = useState(false);
-  const [bookings, setBookings] = useState([]);
-  const [userName, setUserName] = useState(null);
+  const UserName = localStorage.getItem("username");
+  const { addBooking } = useBooking(UserName);
+    const booking = JSON.parse(localStorage.getItem("travelBooking"));
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const loggedIn = localStorage.getItem("username");
-    setUserName(loggedIn);
-
-    if (loggedIn) {
-      const savedData = JSON.parse(localStorage.getItem(loggedIn)) || {};
-      setBookings(savedData.booking || []);
-    }
-  }, []);
-   const updateBooking = (updated) => {
-    setBookings(updated);
-
-    const userData = JSON.parse(localStorage.getItem(userName)) || {};
-    localStorage.setItem(
-      userName,
-      JSON.stringify({ ...userData, booking: updated })
-    );
-    window.dispatchEvent(new Event("bookingChange"));
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
 
   return (
     <div
@@ -74,7 +57,9 @@ const BookingSummary = () => {
         </div>
 
         <button
-          onClick={() => setShowPopup(true)}
+          onClick={() => 
+            setShowPopup(true)
+          }
           className="mt-8 w-full bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full text-lg shadow-md"
         >
           Confirm Booking
@@ -92,8 +77,10 @@ const BookingSummary = () => {
             </p>
             <button
               onClick={() => {
+                addBooking(booking);
                 setShowPopup(false);
                 navigate("/destination");
+                handleClick();
               }}
               className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-lg font-semibold w-full"
             >

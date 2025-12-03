@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useWishlist(username) {
+const useWishlist = (username) => {
   const [wishlist, setWishlist] = useState([]);
 
    useEffect(() => {
@@ -16,17 +16,16 @@ export default function useWishlist(username) {
       const updatedData = JSON.parse(localStorage.getItem(username)) || {};
       setWishlist(updatedData.wishlist || []);
     };
-
     window.addEventListener("wishlistChange", refresh);
     return () => window.removeEventListener("wishlistChange", refresh);
   }, [username]);
+
 
   const toggleWishlist = (item) => {
     if (!username) {
       window.dispatchEvent(new Event("showLoginPopup"));
       return;
     }
-
     const exists = wishlist.some((w) => w.id === item.id);
     const updated = exists
       ? wishlist.filter((w) => w.id !== item.id)
@@ -45,3 +44,5 @@ export default function useWishlist(username) {
 
   return { wishlist, toggleWishlist };
 }
+
+export default useWishlist;

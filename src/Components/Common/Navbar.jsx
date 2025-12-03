@@ -6,14 +6,12 @@ import {
   MdFavorite,
   MdOutlineBook,
 } from "react-icons/md";
-import Login from "../../Pages/LogIn";
 import { FaUser } from "react-icons/fa";
 import { IoLogOutOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("Home");
-  const [showLogin, setShowLogin] = useState(false);
   const [userName, setUserName] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
   const navigate = useNavigate();
@@ -23,7 +21,6 @@ const Navbar = () => {
     if (savedUser) setUserName(savedUser);
   }, []);
 
-  // wishlist updates
   useEffect(() => {
     const refresh = () => setUserName(localStorage.getItem("username"));
     window.addEventListener("wishlistChange", refresh);
@@ -40,7 +37,7 @@ const Navbar = () => {
     setUserName(null);
     localStorage.removeItem("username");
     setShowProfile(false);
-     window.dispatchEvent(new Event("wishlistChange"));
+    window.dispatchEvent(new Event("wishlistChange"));
   };
 
   return (
@@ -146,7 +143,14 @@ const Navbar = () => {
                       <span className="font-bold text-red-500">Wishlist</span>
                     </div>
 
-                    <div className="flex items-center gap-2 mt-2">
+                    <div
+                      className="flex items-center gap-2 mt-2 cursor-pointer"
+                      onClick={() => {
+                        navigate("/bookings");
+                        setShowProfile(false);
+                        handleClick();
+                      }}
+                    >
                       <MdOutlineBook className="text-blue-600 text-xl" />
                       <span className="font-bold text-blue-700">Bookings</span>
                     </div>
@@ -165,7 +169,7 @@ const Navbar = () => {
               </div>
             ) : (
               <button
-                onClick={() => setShowLogin(true)}
+                onClick={() => navigate("/login")}
                 className="px-5 py-2 bg-orange-500 rounded-full"
               >
                 Login
@@ -255,12 +259,22 @@ const Navbar = () => {
                       <MdFavorite className="text-red-600 text-xl" />
                       <span className="font-bold text-red-500">Wishlist</span>
                     </div>
-                    <div className="flex items-center gap-2 mt-2">
-                      <MdOutlineBook className="text-blue-500 text-xl" />
-                      <span className="font-semibold">Bookings</span>
+                    <div
+                      className="flex items-center gap-2 mt-2 cursor-pointer"
+                      onClick={() => {
+                        navigate("/bookings");
+                        setShowProfile(false);
+                        handleClick();
+                      }}
+                    >
+                      <MdOutlineBook className="text-blue-600 text-xl" />
+                      <span className="font-bold text-blue-700">Bookings</span>
                     </div>
                     <div className="flex justify-center items-center">
-                      <button className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 flex items-center justify-center gap-2">
+                      <button
+                        onClick={logout}
+                        className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 flex items-center justify-center gap-2"
+                      >
                         <IoLogOutOutline className="text-lg font-semibold" />
                         Logout
                       </button>
@@ -270,7 +284,7 @@ const Navbar = () => {
               </div>
             ) : (
               <button
-                onClick={() => setShowLogin(true)}
+                onClick={() => navigate("/login")}
                 className="px-5 py-2 bg-gradient-to-r from-orange-500 to-green-600 rounded-full mt-4"
               >
                 Login
@@ -279,18 +293,6 @@ const Navbar = () => {
           </div>
         )}
       </header>
-
-      {/* Login Popup */}
-      {showLogin && (
-        <Login
-          onClose={() => setShowLogin(false)}
-          onLoginSuccess={(name) => {
-            setUserName(name);
-            localStorage.setItem("username", name);
-            window.dispatchEvent(new Event("wishlistChange"));
-          }}
-        />
-      )}
     </div>
   );
 };

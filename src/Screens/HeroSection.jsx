@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
+   const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <section
       className="w-full h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-center px-4 relative"
@@ -14,15 +17,14 @@ const HeroSection = () => {
         <div className="track text-white bg-black/30 backdrop-blur-md py-2 text-xs sm:text-lg md:text-xl font-serif font-bold whitespace-nowrap">
           <span className="px-10">
             Incredible India | Culture | Heritage | Nature | Travel | Explore |
-            Adventure | Incredible India | Culture | Heritage | Nature | Travel | Explore |
-            Adventure | Incredible India | Culture | Heritage | Nature | Travel | Explore |
-            Adventure
+            Adventure | Incredible India | Culture | Heritage | Nature | Travel
+            | Explore | Adventure | Incredible India | Culture | Heritage |
+            Nature | Travel | Explore | Adventure
           </span>
         </div>
       </div>
 
       <div className="mt-24 sm:mt-28 w-full max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl px-4">
-        
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-50">
           Welcome to <span className="text-orange-400 font-serif">IN</span>D
           <span className="text-green-600 font-serif">IA</span>
@@ -39,14 +41,19 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             to="/about"
+            onClick={handleClick}
             className="px-6 py-3 bg-white text-black rounded-md font-medium hover:bg-orange-500 hover:text-white transition"
           >
             Learn More
           </Link>
 
-          <button className="px-6 py-3 bg-orange-500 text-white rounded-md font-medium hover:bg-white hover:text-black transition">
+          <Link
+            to="/destination"
+            onClick={handleClick}
+            className="px-6 py-3 bg-orange-500 text-white rounded-md font-medium hover:bg-white hover:text-black transition"
+          >
             Book Now
-          </button>
+          </Link>
         </div>
       </div>
     </section>
