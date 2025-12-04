@@ -12,6 +12,10 @@ import {
   FaTelegramPlane,
 } from "react-icons/fa";
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
 const FooterGradient = () => {
   return (
     <footer className="bg-gradient-to-r from-blue-950 to-gray-800 text-white py-14 overflow-x-hidden">
@@ -44,19 +48,29 @@ const FooterGradient = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">Links</h3>
             <ul className="space-y-2 text-sm opacity-90 flex flex-col">
-              <Link to="/" className="hover:text-orange-300">
+              <Link to="/" 
+              onClick={handleClick}
+              className="hover:text-orange-300">
                 Home
               </Link>
-              <Link to="/about" className="hover:text-orange-300">
+              <Link to="/about"
+              onClick={handleClick}
+              className="hover:text-orange-300">
                 About
               </Link>
-              <Link to="/gallery" className="hover:text-orange-300">
+              <Link to="/gallery" 
+              onClick={handleClick}
+              className="hover:text-orange-300">
                 Gallery
               </Link>
-              <Link to="/destination" className="hover:text-orange-300">
+              <Link to="/destination" 
+              onClick={handleClick}
+              className="hover:text-orange-300">
                 Destination
               </Link>
-              <Link to="/contact" className="hover:text-orange-300">
+              <Link to="/contact" 
+              onClick={handleClick}
+              className="hover:text-orange-300">
                 Contact
               </Link>
             </ul>
@@ -66,9 +80,9 @@ const FooterGradient = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">Support</h3>
             <ul className="space-y-2 text-sm opacity-90">
-              <li className="cursor-pointer hover:text-orange-300">
+              <Link to="/helpcenter" className="cursor-pointer hover:text-orange-300">
                 Help Center
-              </li>
+              </Link>
               <li className="cursor-pointer hover:text-orange-300">Terms</li>
               <li className="cursor-pointer hover:text-orange-300">Privacy</li>
               <li className="cursor-pointer hover:text-orange-300">FAQ</li>

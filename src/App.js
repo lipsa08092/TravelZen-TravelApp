@@ -13,6 +13,7 @@ import BookingSummary from "./Screens/BookingSummary";
 import Login from "./Pages/LogIn";
 import Wishlist from "./Pages/Wishlist";
 import Bookings from "./Pages/Bookings";
+import HelpCenter from "./Pages/FooterSuprt.jsx/HelpCenter"
 
 const App = () => {
   //Backend connect test
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/booking-summary" element={<BookingSummary />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/bookings" element={<Bookings />} />
+        <Route path="/helpcenter" element={<HelpCenter />} />
       </Routes>
       <Footer />
     </BrowserRouter>

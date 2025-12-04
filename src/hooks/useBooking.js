@@ -11,13 +11,11 @@ const useBooking = (username) => {
     } else {
       setBookings([]);
     }
-
     const refresh = () => {
       if (!username) return;
       const updatedData = JSON.parse(localStorage.getItem(username)) || {};
       setBookings(updatedData.booking || []);
     };
-
     window.addEventListener("bookingChange", refresh);
     return () => window.removeEventListener("bookingChange", refresh);
   }, [username]);
@@ -29,19 +27,18 @@ const useBooking = (username) => {
     }
     const updated = [...bookings, item];
     setBookings(updated);
-
+    
     const userData = JSON.parse(localStorage.getItem(username)) || {};
     localStorage.setItem(
       username,
       JSON.stringify({ ...userData, booking: updated })
     );
-
     window.dispatchEvent(new Event("bookingChange"));
   };
+
   const removeBooking = (index) => {
     const updated = bookings.filter((current, i) => i !== index);
     setBookings(updated);
-
     const userData = JSON.parse(localStorage.getItem(username)) || {};
     localStorage.setItem(
       username,

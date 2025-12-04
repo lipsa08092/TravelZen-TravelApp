@@ -37,7 +37,6 @@ const Navbar = () => {
     setUserName(null);
     localStorage.removeItem("username");
     setShowProfile(false);
-    window.dispatchEvent(new Event("wishlistChange"));
   };
 
   return (
@@ -169,7 +168,10 @@ const Navbar = () => {
               </div>
             ) : (
               <button
-                onClick={() => navigate("/login")}
+                onClick={() =>{
+                  navigate("/login")
+                  handleClick();
+                } }
                 className="px-5 py-2 bg-orange-500 rounded-full"
               >
                 Login
@@ -284,7 +286,9 @@ const Navbar = () => {
               </div>
             ) : (
               <button
-                onClick={() => navigate("/login")}
+                onClick={() => {navigate("/login")
+                  handleClick();
+                }}
                 className="px-5 py-2 bg-gradient-to-r from-orange-500 to-green-600 rounded-full mt-4"
               >
                 Login

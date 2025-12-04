@@ -78,6 +78,7 @@ const DestinationPage = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const [popupType, setPopupType] = useState("default");
   const navigate = useNavigate();
 
   const userName = localStorage.getItem("username");
@@ -91,7 +92,10 @@ const DestinationPage = () => {
   };
 
   useEffect(() => {
-    const showPopup = () => setShowLoginPopup(true);
+    const showPopup = (e) => {
+      setPopupType(e.detail?.type || "default");
+      setShowLoginPopup(true);
+    };
     window.addEventListener("showLoginPopup", showPopup);
     return () => window.removeEventListener("showLoginPopup", showPopup);
   }, []);
@@ -99,7 +103,7 @@ const DestinationPage = () => {
   return (
     <div className="w-full min-h-screen bg-gray-200">
       {showLoginPopup && (
-        <LoginPopup onClose={() => setShowLoginPopup(false)} type="wishlist" />
+        <LoginPopup onClose={() => setShowLoginPopup(false)} type={popupType} />
       )}
 
       <div
@@ -144,15 +148,34 @@ const DestinationPage = () => {
                 {wishlist.some((w) => w.id === item.id) ? (
                   <IoIosHeart
                     className="absolute top-4 right-4 text-3xl text-red-500 cursor-pointer"
-                    onClick={() => toggleWishlist(item)}
+                    onClick={() => {
+                      if (!userName) {
+                        window.dispatchEvent(
+                          new CustomEvent("showLoginPopup", {
+                            detail: { type: "wishlist" },
+                          })
+                        );
+                        return;
+                      }
+                      toggleWishlist(item);
+                    }}
                   />
                 ) : (
                   <IoIosHeartEmpty
                     className="absolute top-4 right-4 text-3xl text-black bg-white p-1 rounded-full cursor-pointer"
-                    onClick={() => toggleWishlist(item)}
+                    onClick={() => {
+                      if (!userName) {
+                        window.dispatchEvent(
+                          new CustomEvent("showLoginPopup", {
+                            detail: { type: "wishlist" },
+                          })
+                        );
+                        return;
+                      }
+                      toggleWishlist(item);
+                    }}
                   />
                 )}
-
                 <div className="p-4">
                   <h3 className="text-xl font-semibold flex items-center gap-2">
                     <MdLocationOn className="text-red-500" /> {item.name}
@@ -172,7 +195,11 @@ const DestinationPage = () => {
                     <button
                       onClick={() => {
                         if (!userName) {
-                          window.dispatchEvent(new Event("showLoginPopup"));
+                          window.dispatchEvent(
+                            new CustomEvent("showLoginPopup", {
+                              detail: { type: "booking" },
+                            })
+                          );
                           return;
                         }
                         handleClick();

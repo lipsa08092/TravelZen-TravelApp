@@ -16,7 +16,6 @@ const BookingPage = () => {
 
   useEffect(() => {
     if (!userName) return;
-
     const userData = JSON.parse(localStorage.getItem(userName)) || {};
     setBookings(userData.booking || []);
 
@@ -40,9 +39,9 @@ const BookingPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <div className="min-h-screen bg-gray-100 py-24 px-4">
+    <div className="min-h-screen bg-white py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold mb-12 text-gray-900 text-center">
+        <h1 className="text-4xl font-bold mb-12 text-gray-800 text-center">
           Your Bookings
         </h1>
 
@@ -53,9 +52,9 @@ const BookingPage = () => {
             {bookings.map((item, index) => (
               <div
                 key={index}
-                className="bg-white shadow-md rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row gap-4 hover:shadow-lg transition-all"
+                className="bg-white hover:scale-105 shadow-md rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row gap-4 hover:shadow-lg transition-all"
               >
-                <div className="w-full sm:w-36 h-36 rounded-lg overflow-hidden border">
+                <div className=" w-36 h-36 rounded-lg overflow-hidden border">
                   <img
                     src={item.img}
                     alt={item.name}
@@ -63,7 +62,7 @@ const BookingPage = () => {
                   />
                 </div>
 
-                <div className="flex-1 flex flex-col justify-between">
+                <div className=" flex flex-col flex-1 justify-between">
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-1">
                       <MdLocationOn className="text-red-500 text-xl" />
@@ -72,8 +71,7 @@ const BookingPage = () => {
                     <div className="text-gray-600 text-sm mt-2">
                       <b className="text-gray-700">Category Options:</b>
                       <ul className="ml-2 list-disc">
-                        {Object.entries(item.selectedOptions)
-                          .filter(([_, value]) => value === true)
+                        {Object.entries(item.selectedOptions).filter(([_, value]) => value === true)
                           .map(([key]) => (
                             <li key={key}>
                               {key.charAt(0).toUpperCase() + key.slice(1)}
