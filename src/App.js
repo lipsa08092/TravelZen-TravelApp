@@ -14,6 +14,8 @@ import Login from "./Pages/LogIn";
 import Wishlist from "./Pages/Wishlist";
 import Bookings from "./Pages/Bookings";
 import HelpCenter from "./Pages/FooterSuprt.jsx/HelpCenter"
+import TermAndCondition from "./Pages/FooterSuprt.jsx/TermAndCondition";
+import FAQ from "./Pages/FooterSuprt.jsx/FAQ";
 
 const App = () => {
   //Backend connect test
@@ -39,6 +41,8 @@ const App = () => {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/bookings" element={<Bookings />} />
         <Route path="/helpcenter" element={<HelpCenter />} />
+        <Route path="/termandcondition" element={<TermAndCondition />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
       <Footer />
     </BrowserRouter>

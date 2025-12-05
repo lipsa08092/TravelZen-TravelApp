@@ -12,9 +12,9 @@ import {
   FaTelegramPlane,
 } from "react-icons/fa";
 
-  const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+const handleClick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const FooterGradient = () => {
   return (
@@ -48,29 +48,39 @@ const FooterGradient = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">Links</h3>
             <ul className="space-y-2 text-sm opacity-90 flex flex-col">
-              <Link to="/" 
-              onClick={handleClick}
-              className="hover:text-orange-300">
+              <Link
+                to="/"
+                onClick={handleClick}
+                className="hover:text-orange-300"
+              >
                 Home
               </Link>
-              <Link to="/about"
-              onClick={handleClick}
-              className="hover:text-orange-300">
+              <Link
+                to="/about"
+                onClick={handleClick}
+                className="hover:text-orange-300"
+              >
                 About
               </Link>
-              <Link to="/gallery" 
-              onClick={handleClick}
-              className="hover:text-orange-300">
+              <Link
+                to="/gallery"
+                onClick={handleClick}
+                className="hover:text-orange-300"
+              >
                 Gallery
               </Link>
-              <Link to="/destination" 
-              onClick={handleClick}
-              className="hover:text-orange-300">
+              <Link
+                to="/destination"
+                onClick={handleClick}
+                className="hover:text-orange-300"
+              >
                 Destination
               </Link>
-              <Link to="/contact" 
-              onClick={handleClick}
-              className="hover:text-orange-300">
+              <Link
+                to="/contact"
+                onClick={handleClick}
+                className="hover:text-orange-300"
+              >
                 Contact
               </Link>
             </ul>
@@ -79,14 +89,35 @@ const FooterGradient = () => {
           {/* Support */}
           <div>
             <h3 className="text-2xl font-bold mb-4">Support</h3>
-            <ul className="space-y-2 text-sm opacity-90">
-              <Link to="/helpcenter" className="cursor-pointer hover:text-orange-300">
-                Help Center
-              </Link>
-              <li className="cursor-pointer hover:text-orange-300">Terms</li>
-              <li className="cursor-pointer hover:text-orange-300">Privacy</li>
-              <li className="cursor-pointer hover:text-orange-300">FAQ</li>
-            </ul>
+            <div className="space-y-2 text-sm opacity-90">
+              <div>
+                <Link
+                  to="/helpcenter"
+                  onClick={handleClick}
+                  className="cursor-pointer hover:text-orange-300"
+                >
+                  Help Center
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/termandcondition"
+                  onClick={handleClick}
+                  className="cursor-pointer hover:text-orange-300"
+                >
+                  Terms
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/faq"
+                  onClick={handleClick}
+                  className="cursor-pointer hover:text-orange-300"
+                >
+                  FAQ
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div>
