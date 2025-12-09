@@ -20,7 +20,7 @@ export default function HelpCenter() {
         }}
       >
         <div className="max-w-2xl">
-          <h1 className="text-gray-100 text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">
+          <h1 className="text-gray-100 text-5xl md:text-6xl font-extrabold mb-6 ">
             How can we help?
           </h1>
 

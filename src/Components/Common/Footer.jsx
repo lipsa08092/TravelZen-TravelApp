@@ -101,7 +101,7 @@ const FooterGradient = () => {
               </div>
               <div>
                 <Link
-                  to="/termandcondition"
+                  to="/term-and-condition"
                   onClick={handleClick}
                   className="cursor-pointer hover:text-orange-300"
                 >

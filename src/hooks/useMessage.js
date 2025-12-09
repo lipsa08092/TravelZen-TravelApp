@@ -16,7 +16,6 @@ const useMessage = (username) => {
       const updated = JSON.parse(localStorage.getItem(username)) || {};
       setMessages(updated.message || []);
     };
-
     window.addEventListener("messageChange", refresh);
     return () => window.removeEventListener("messageChange", refresh);
   }, [username]);

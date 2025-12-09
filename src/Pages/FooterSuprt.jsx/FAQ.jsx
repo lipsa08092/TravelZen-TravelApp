@@ -51,7 +51,7 @@ function FAQ() {
               className="bg-white/40 rounded-2xl border border-gray-200  backdrop-blur-lg"
             >
               <button
-                className="w-full flex justify-between items-center p-6 "
+                className="w-full flex  items-center p-6 justify-between "
                 onClick={() => toggleFAQ(index)}
               >
                 <span className="text-lg md:text-xl font-semibold text-gray-800">

@@ -46,7 +46,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <MdOutlineTravelExplore className="text-4xl" />
             <h1 className="text-2xl font-bold">
-              <span className="text-orange-600">Tra</span>vel{" "}
+              <span className="text-orange-600">Tra</span>vel
               <span className="text-green-600">Zen</span>
             </h1>
           </div>
